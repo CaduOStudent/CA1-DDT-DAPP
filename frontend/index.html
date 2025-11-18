@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MedicalRecords Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+  <style>body{font-family:Arial;padding:16px}button{margin:6px}</style>
+</head>
+<body>
+  <h3>Medical Records Demo</h3>
+  <div>
+    <label>Contract Address <input id="contractAddr" style="width:360px"></label>
+    <button id="connect">Connect MetaMask</button>
+  </div>
+  <hr>
+  <div>
+    <h4>Patient</h4>
+    <input id="cid" placeholder="IPFS CID" style="width:360px"><br>
+    <input id="content" placeholder="content to hash" style="width:360px"><br>
+    <button id="create">Create Record</button>
+  </div>
+  <hr>
+  <div>
+    <h4>Provider</h4>
+    <input id="recordId" placeholder="Record ID" style="width:120px">
+    <input id="addr" placeholder="Provider Address" style="width:240px"><br>
+    <button id="request">Request Access</button>
+    <button id="canAccess">Check Access</button>
+  </div>
+  <pre id="log"></pre>
+  <script src="app.js"></script>
+</body>
+</html>
