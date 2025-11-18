@@ -38,3 +38,7 @@ For unsupported modules, an error like this will be thrown: '<module_name> modul
 - npx hardhat run scripts/deploy.js --network localhost
 - npx hardhat test
 - npx hardhat run scripts/interact-example.js --network localhost
+- npm install -g truffle (if needed)
+- truffle migrate --network development
+- truffle tes
+
