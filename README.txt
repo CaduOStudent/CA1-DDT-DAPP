@@ -1,44 +1,41 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/R8InBwpK)
 
 
-REMIX DEFAULT WORKSPACE
+# Decentralized Medical Records DApp
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+This repository contains a decentralized application (DApp) for the *Healthcare & Medical Records* scenario of the blockchain CA1 assignment.
 
-This workspace contains 3 directories:
+The goal is to give *patients control over access to their medical records* using an Ethereum smart contract as a trusted middle layer between patients and healthcare providers.
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+## Scenario
 
-SCRIPTS
+- *Domain:* Healthcare & Medical Records  
+- *Problem:* Traditional electronic health record (EHR) systems are centralized, siloed and controlled by hospitals/clinics. Patients have limited visibility and control over who can access their data.  
+- *Solution:* A smart contract called MedicalRecords that:
+  - Stores medical record metadata on‑chain (IPFS CID + content hash).
+  - Lets a *patient (sender)* create records and manage permissions.
+  - Lets a *doctor/provider (receiver)* request access to a record.
+  - Records *grant* and *revoke* decisions immutably on the blockchain.
+  - Exposes a canAccess function to check if a user is allowed to access a record.
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+## Tech stack
 
-For the deployment of any other contract, just update the contract name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+- *Solidity* smart contract (contracts/MedicalRecords.sol)
+- *Hardhat* for compile, deploy, scripts and tests
+- *Remix IDE* for contract editing and quick deployment
+- *Ganache* or npx hardhat node as local blockchain
+- *MetaMask* for accounts and signing transactions
+- *JavaScript (ethers.js)* minimal frontend in frontend/
+- *Shell script* (run-ganache.sh) to start local chain
+- *Truffle* (optional) for migration/testing
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+## Basic Hardhat workflow
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
-
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
-
-
-
-- npm install
-- npx hardhat node (or ./run-ganache.sh)
-- npx hardhat compile
-- npx hardhat run scripts/deploy.js --network localhost
-- npx hardhat test
-- npx hardhat run scripts/interact-example.js --network localhost
-- npm install -g truffle (if needed)
-- truffle migrate --network development
-- truffle tes
+bash
+npm install
+npx hardhat node             # or: ./run-ganache.sh
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network localhost
+npx hardhat test
+npx hardhat run scripts/interact-example.js --network localhost
 
