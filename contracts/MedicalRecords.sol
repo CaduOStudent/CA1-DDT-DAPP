@@ -8,6 +8,7 @@ contract MedicalRecords {
         bytes32 contentHash; // keccak256 or SHA-256 represented as bytes32
         uint256 createdAt;
     }
+    
 
     mapping(uint256 => Record) public records;
     mapping(uint256 => mapping(address => bool)) public accessGranted;
