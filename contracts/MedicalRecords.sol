@@ -54,4 +54,8 @@ contract MedicalRecords {
         if (records[id].owner == user) return true;
         return accessGranted[id][user];
     }
+
+    function getOwner() public view returns (address) {
+    return owner;
+}
 }
