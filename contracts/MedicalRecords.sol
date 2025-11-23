@@ -2,7 +2,7 @@
 pragma solidity ^0.8.18;
 
 contract MedicalRecords {
-    address public owner;
+    //address public owner; 
     struct Record {
         address owner;
         string cid;         // IPFS CID or encrypted URI
@@ -10,9 +10,9 @@ contract MedicalRecords {
         uint256 createdAt;
     }
     
-    constructor() {
-    owner = msg.sender; // Deployer is the owner
-}
+    //constructor() {
+    //owner = msg.sender; // Deployer is the owner
+//}
 
     mapping(uint256 => Record) public records;
     mapping(uint256 => mapping(address => bool)) public accessGranted;
@@ -55,7 +55,7 @@ contract MedicalRecords {
         return accessGranted[id][user];
     }
 
-    function getOwner() public view returns (address) {
-    return owner;
-}
+  //  function getOwner() public view returns (address) {
+   // return owner;
+//}
 }
