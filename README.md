@@ -138,8 +138,6 @@ Hashing: Generate contentHash using keccak256 (e.g., in JavaScript or Solidity).
 - *No sensitive data is stored on-chain (only CIDs/hashes).*
 - *Reentrancy-safe: Uses Checks-Effects-Interactions pattern.*
 
-> Documentation
-For detailed workflows and examples, see: MedicalRecords Full Guide
 
 > License
 ```MIT```
