@@ -89,38 +89,51 @@ A **decentralized medical records management system** built on Ethereum. Patient
        "QmX1abc...",                          // IPFS CID
        "0x1234...5678"                       // Content hash (hex string)
    );
-Returns recordId (e.g., 0 for the first record).
+   Returns recordId (e.g., 0 for the first record).
+   ```
+   
 3. Manage Access
 Request Access (as a healthcare provider):
-SOLIDITY
-requestAccess(0); // Replace `0` with the `recordId`
+
+```solidity
+  requestAccess(0); // Replace `0` with the `recordId`
+```
+
 Grant Access (as the patient/owner):
-SOLIDITY
-grantAccess(0, 0xProviderAddress); // Approve the request
+```solidity
+  grantAccess(0, 0xProviderAddress); // Approve the request
+```
+
 Revoke Access:
-SOLIDITY
-revokeAccess(0, 0xProviderAddress);
+```solidity
+  revokeAccess(0, 0xProviderAddress);
+```
 4. Update a Record
-SOLIDITY
+```solidity
 updateRecord(
     0,                                      // recordId
     "QmX1newCID...",                        // New IPFS CID
     "0x9abc...def0"                         // New content hash
 );
+```
+
 5. Check Access
-SOLIDITY
+```solidity
 canAccess(0, 0xProviderAddress); // Returns `true`/`false`
-Technical Details
+```
+
+### Technical Details
 Solidity Version: ^0.8.0 (safe from overflows/underflows).
 IPFS: Use IPFS CLI or Pinata for storage.
 Hashing: Generate contentHash using keccak256 (e.g., in JavaScript or Solidity).
-Security Notes
+
+### Security Notes
 Only the record owner can grant/revoke access or update records. No sensitive data is stored on-chain (only CIDs/hashes). Reentrancy-safe: Uses Checks-Effects-Interactions pattern.
 
-Documentation
+> Documentation
 For detailed workflows and examples, see: MedicalRecords Full Guide
 
-License
+> License
 MIT
 
 
