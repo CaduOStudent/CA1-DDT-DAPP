@@ -123,9 +123,9 @@ canAccess(0, 0xProviderAddress); // Returns `true`/`false`
 ```
 
 ### Technical Details
-Solidity Version: ^0.8.0 (safe from overflows/underflows).
-IPFS: Use IPFS CLI or Pinata for storage.
-Hashing: Generate contentHash using keccak256 (e.g., in JavaScript or Solidity).
+```Solidity Version: ^0.8.0 (safe from overflows/underflows).```
+```IPFS: Use IPFS CLI or Pinata for storage.```
+```Hashing: Generate contentHash using keccak256 (e.g., in JavaScript or Solidity).```
 
 ### Security Notes
 Only the record owner can grant/revoke access or update records. No sensitive data is stored on-chain (only CIDs/hashes). Reentrancy-safe: Uses Checks-Effects-Interactions pattern.
@@ -134,7 +134,7 @@ Only the record owner can grant/revoke access or update records. No sensitive da
 For detailed workflows and examples, see: MedicalRecords Full Guide
 
 > License
-MIT
+```MIT```
 
 
 
