@@ -52,10 +52,10 @@ A **decentralized medical records management system** built on Ethereum. Patient
 ---
 
 ## **Features**
-✅ **IPFS Integration**: Store records off-chain (CID + hash on-chain).
-✅ **Access Control**: Patients grant/revoke access to specific addresses.
-✅ **Immutable Logs**: All actions are recorded on-chain.
-✅ **Gas-Efficient**: Optimized for low-cost transactions.
+ **IPFS Integration**: Store records off-chain (CID + hash on-chain).
+**Access Control**: Patients grant/revoke access to specific addresses.
+**Immutable Logs**: All actions are recorded on-chain.
+**Gas-Efficient**: Optimized for low-cost transactions.
 
 ---
 
